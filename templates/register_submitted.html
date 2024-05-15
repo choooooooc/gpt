@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Thank You for Submitting Your Health Form!</h1>
+    </header>
+    <main>
+        <p>Your information has been successfully submitted. You can now go back to the homepage to see your updated
+            details and personalized health plan recommendations.</p>
+        <div class="button-container">
+            <div class="button"><a href="{{ url_for('index') }}">Go Back to Home</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Health Assistant</p>
+    </footer>
+</body>
+
+</html>

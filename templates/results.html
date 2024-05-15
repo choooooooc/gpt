@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assistant Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Health Assistant Results</h1>
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('index') }}">Home</a>
+            </div>
+        </div>
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('register') }}">Register Another User</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="gpt_response">
+            <h2>Result from GPT Analysis</h2>
+
+            <p>{{ response | safe}}</p>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Health Assistant</p>
+    </footer>
+</body>
+
+</html>

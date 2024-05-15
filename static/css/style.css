@@ -1,0 +1,196 @@
+h1{
+    background-color: cadetblue;
+    color: rgb(255, 255, 255);
+}
+main {
+    padding: 20px;
+}
+footer {
+    color: rgb(7, 94, 73);
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+}
+p,a,h1,h2,h3,label,textarea,select,option{
+    font-family:Cursive, Geneva, Tahoma, sans-serif;
+}
+p,a,h2,h3,label,textarea,select,option{
+color: rgb(7, 94, 73);
+}
+input[type="number"]::placeholder,
+select::placeholder {
+    font-family:Cursive, Geneva, Tahoma, sans-serif;
+    text-align:center;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0;
+    margin: auto;
+}
+h2{
+    font-size: 40px;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+}
+h3{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0;
+    margin: auto;
+}
+.button {
+    display: inline-block; /* Changed to inline-block */
+    background-color: cadetblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+}
+
+.button:hover {
+    background-color: darkcyan; 
+}
+.button-container {
+    text-align: center; 
+    margin: 10px auto;
+}
+
+.button a {
+    color: inherit; 
+    text-decoration: none;
+}
+p{
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    margin: 5px auto;
+}
+a{
+    font-size: 20px;
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    border: 3px solid rgb(7, 94, 73);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    width: 200px;
+}
+nav ul li a{
+    color: rgb(7, 94, 73);
+    text-decoration: none;
+    text-align: center;
+}
+.form, .form-group {
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+label {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    color: rgb(7, 94, 73);
+    font-family:Cursive, Geneva, Tahoma, sans-serif;
+}
+
+input[type="submit"] {
+    display: block;
+    background-color: cadetblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    font-family: Cursive, Geneva, Tahoma, sans-serif;
+}
+
+.user_info{
+    border: 3px solid cadetblue;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 5px auto;
+}
+
+.user_info h2{
+    background-color: cadetblue;
+    color: #fff;
+}
+form{
+    border: 3px solid  cadetblue;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 5px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+form h2{
+    background-color: cadetblue;
+    color: #fff;
+}
+.gpt_response{
+    border: 3px solid  cadetblue;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 5px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.gpt_response h2{
+    background-color: cadetblue;
+    color: #fff;
+}
+.gpt_response p{
+   margin: 20px;;
+}
+
+@media screen and (min-width: 768px){
+    .form, .form-group,.user_info,form, .gpt_response{
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .form, .form-group,.user_info,form, .gpt_response{
+        max-width: 1000px;
+    }
+}

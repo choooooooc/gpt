@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Health Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Your Health Assistant</h1>
+    </header>
+    <main>
+        <p>Welcome to the application. Please choose an option:</p>
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </div>
+        <p>or</p>
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('register') }}">Register</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Health Assistant</p>
+    </footer>
+</body>
+
+</html>

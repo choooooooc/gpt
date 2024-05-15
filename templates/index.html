@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assistant Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Your Health Assistant</h1>
+
+        {% if 'username' in session %}
+        <p>Welcome, {{ session.username }}!</p>
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </div>
+        {% endif %}
+
+    </header>
+    <main>
+
+
+        {% if user.bmi %}
+        <section class="user_info">
+            <h2>Your Information</h2>
+            <p>Name: {{ user.name }}</p>
+            <p>Age: {{ user.age }}</p>
+            <p>Weight: {{ user.weight }} kg</p>
+            <p>Height: {{ user.height }} cm</p>
+            <p>Body Fat: {{ user.body_fat_percentage }}%</p>
+            <p>BMI: {{ user.bmi | round(1) }}</p>
+            <p>Status:
+                {% if user.bmi < 18.5 %} Lean {% elif user.bmi < 25 %} Moderate {% else %} Fat {% endif %} </p>
+                    <div class="button-container">
+                        <div class="button">
+                            <a href="{{ url_for('register') }}">Update My Info</a>
+                        </div>
+                    </div>
+                    <h3>Recommended Plan:</h3>
+                    <p>
+                        {% if user.bmi < 18.5 %} Weight Gain Plan {% elif user.bmi < 25 %} Maintenance Plan {% else %}
+                            Weight Loss Plan {% endif %} </p>
+
+        </section>
+        <form action="{{ url_for('results') }}" method="post" class="form">
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+            <h2>Health Plan</h2>
+            <p> Please fill the form below to get your health plan</p>
+            <div class="form-group">
+                <label for="plan">Choose your health plan:</label>
+                <select name="plan" id="plan">
+                    <option value="Weight Gain Plan">Weight Gain Plan</option>
+                    <option value="Maintenance Plan">Maintenance Plan</option>
+                    <option value="Weight Loss Plan">Weight Loss Plan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="target_weight">Choose your target weight:</label>
+                <input type="number" id="target_weight" name="target_weight" placeholder="Enter weight in kg">
+            </div>
+            <div class="form-group">
+                <label for="duration">Choose your duration:</label>
+                <select name="duration" id="duration">
+                    <option value="4 weeks">4 Weeks</option>
+                    <option value="8 weeks">8 Weeks</option>
+                    <option value="12 weeks">12 Weeks</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="plan_submit" value="Get My Plan">
+            </div>
+        </form>
+        {% else %}
+
+        <div class="button-container">
+            <div class="button">
+                <a href="{{ url_for('register') }}">Register Your Info</a>
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+
+
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2024 Health Assistant</p>
+    </footer>
+</body>
+
+</html>
